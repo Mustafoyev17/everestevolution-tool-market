@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useApp } from '@/contexts/AppContext';
@@ -13,7 +12,8 @@ import {
   User, 
   Sun, 
   Moon,
-  Home
+  Home,
+  Contact,
 } from 'lucide-react';
 import {
   DropdownMenu,
@@ -39,6 +39,7 @@ const Navbar = () => {
     { name: 'Categories', path: '/categories' },
     { name: 'About', path: '/about' },
     { name: 'Pricing', path: '/pricing' },
+    { name: 'Contact Us', path: '/contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
