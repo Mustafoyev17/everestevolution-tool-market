@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '@/contexts/AppContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -13,6 +13,7 @@ import { toast } from '@/hooks/use-toast';
 
 const Cart = () => {
   const { state, dispatch } = useApp();
+  const navigate = useNavigate();
 
   const updateQuantity = (id: string, newQuantity: number) => {
     if (newQuantity < 1) {
@@ -186,7 +187,11 @@ const Cart = () => {
                   </div>
                 )}
                 
-                <Button className="w-full mt-6 btn-primary" size="lg">
+                <Button 
+                  onClick={() => navigate('/checkout')}
+                  className="w-full mt-6 btn-primary" 
+                  size="lg"
+                >
                   Proceed to Checkout
                 </Button>
                 
